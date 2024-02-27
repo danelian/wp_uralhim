@@ -11,13 +11,16 @@
         <div class="footer__col">
           <div class="footer__group">
             <h3 class="footer__title">Навигация</h3>
-            <ul class="footer__menu">
-              <li><a href="#">Главная</a></li>
-              <li><a href="#">Продукция</a></li>
-              <li><a href="#">О компании</a></li>
-              <li><a href="#">Услуги</a></li>
-              <li><a href="#contacts">Контакты</a></li>
-            </ul>
+            <?php
+              wp_nav_menu([
+                'theme_location' => 'main menu',
+                'container' => '',
+                'menu_class' => 'footer__menu',
+                'menu_id' => false,
+                'echo' => true,
+                'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+              ]);
+            ?>
           </div>
         </div>
         <div class="footer__col">

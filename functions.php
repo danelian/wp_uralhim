@@ -70,3 +70,15 @@ function delete_intermediate_image_sizes($sizes)
     '2048x2048',
   ]);
 }
+
+
+/**
+ * Регистрирация областей меню
+ */
+function danelian_menus() {
+  $locations = array(
+    'main menu' => 'Main Menu',
+  );
+  register_nav_menus($locations);
+}
+add_action('init', 'danelian_menus');
