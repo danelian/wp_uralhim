@@ -77,7 +77,8 @@ function delete_intermediate_image_sizes($sizes)
  */
 function danelian_menus() {
   $locations = array(
-    'main menu' => 'Main Menu',
+    'header' => 'Header Menu',
+    'footer' => 'Footer Menu',
   );
   register_nav_menus($locations);
 }

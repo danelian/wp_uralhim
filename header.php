@@ -24,7 +24,7 @@
         </a>
         <?php
           wp_nav_menu([
-            'theme_location' => 'main menu',
+            'theme_location' => 'header',
             'container' => '',
             'menu_class' => 'nav-list',
             'menu_id' => false,

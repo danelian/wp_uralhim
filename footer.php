@@ -13,7 +13,7 @@
             <h3 class="footer__title">Навигация</h3>
             <?php
               wp_nav_menu([
-                'theme_location' => 'main menu',
+                'theme_location' => 'footer',
                 'container' => '',
                 'menu_class' => 'footer__menu',
                 'menu_id' => false,
