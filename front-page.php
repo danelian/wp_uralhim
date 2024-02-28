@@ -121,18 +121,34 @@ get_header(); ?>
   <div class="container">
     <div class="default__container">
       <div class="default__container-left">
-        <h2 class="default-title">02 – о компании</h2>
+        <h2 class="default-title"><?php the_field('companybl_section'); ?></h2>
       </div>
       <div class="default__container-right">
-        <h2 class="companybl__title">мы производим высококачественное оборудование для&nbsp;атомной промышленности,
-          нефтехимии, газовой, химической и энергетической сфер</h2>
-        <div class="companybl__text">
-          <p>Наше производство также включает в себя мини-АЗС и комплексные автозаправочные станции (КАЗС),
-            соответствующие самым строгим стандартам качества и безопасности.</p>
-        </div>
+        <?php if (get_field('companybl_title')) { ?><h2 class="companybl__title"><?php the_field('companybl_title'); ?></h2><?php } ?>
+        <?php if (get_field('companybl_text')) { ?><div class="companybl__text"><?php the_field('companybl_text'); ?></div><?php } ?>
         <div class="row-buttons">
-          <a href="services.html" class="button-primary-dark">Наши услуги</a>
-          <a href="#" class="button-second-dark">Связаться с нами</a>
+          <?php 
+            $companybl_btn1 = get_field('companybl_btn1');
+            if( $companybl_btn1 ): 
+                $companybl_btn1_url = $companybl_btn1['url'];
+                $companybl_btn1_title = $companybl_btn1['title'];
+                $companybl_btn1_target = $companybl_btn1['target'] ? $companybl_btn1['target'] : '_self';
+                ?>
+                <a href="<?php echo esc_url( $companybl_btn1_url ); ?>" target="<?php echo esc_attr( $companybl_btn1_target ); ?>" class="button-primary-dark">
+                  <?php echo esc_html( $companybl_btn1_title ); ?>
+                </a>
+          <?php endif; ?>
+          <?php 
+            $companybl_btn2 = get_field('companybl_btn2');
+            if( $companybl_btn2 ): 
+                $companybl_btn2_url = $companybl_btn2['url'];
+                $companybl_btn2_title = $companybl_btn2['title'];
+                $companybl_btn2_target = $companybl_btn2['target'] ? $companybl_btn2['target'] : '_self';
+                ?>
+                <a href="<?php echo esc_url( $companybl_btn2_url ); ?>" target="<?php echo esc_attr( $companybl_btn2_target ); ?>" class="button-second-dark">
+                  <?php echo esc_html( $companybl_btn2_title ); ?>
+                </a>
+          <?php endif; ?>
         </div>
       </div>
     </div>
