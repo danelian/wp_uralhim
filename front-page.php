@@ -204,40 +204,7 @@ get_header(); ?>
 </section>
 <?php } ?>
 
-<section class="accreditbl">
-  <div class="container">
-    <div class="default__container">
-      <div class="default__container-left">
-        <h2 class="default-title">04 – аккредитация</h2>
-      </div>
-      <div class="default__container-right">
-        <h2 class="section-title">мы соответствуем стандартам гост качества</h2>
-        <p>Компания аккредитована как производитель и&nbsp;поставщик оборудования для ведущих компаний РФ и СНГ</p>
-        <div class="accreditbl__logos">
-          <div class="accreditbl__logos-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/partner-gazprom-logo.png" alt="Partner Gasprom logo">
-          </div>
-          <div class="accreditbl__logos-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/partner-rosatom-logo.png" alt="Partner Rosatom logo">
-          </div>
-          <div class="accreditbl__logos-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/partner-transneft-logo.png" alt="Partner Transneft logo">
-          </div>
-          <div class="accreditbl__logos-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/partner-rosneft-logo.png" alt="Partner Rosneft logo">
-          </div>
-          <div class="accreditbl__logos-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/partner-alrosa-logo.png" alt="Partner Alrosa logo">
-          </div>
-        </div>
-        <p>Подробнее о сертификации, лицензиях и разрешительной документации вы узнаете на странице “О Компании”</p>
-        <div class="row-buttons">
-          <a href="about-us.html" class="button-primary">О компании</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<?php get_template_part('template-parts/accreditbl'); ?>
 
 <section class="ctabl" id="cta">
   <div class="container">

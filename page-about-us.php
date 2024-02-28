@@ -25,47 +25,7 @@ get_header(); ?>
   </div>
 </section>
 
-<section class="accreditbl">
-  <div class="container">
-    <div class="default__container">
-      <div class="default__container-left">
-        <h2 class="default-title">02 – аккредитация</h2>
-      </div>
-      <div class="default__container-right">
-        <h2 class="section-title">мы соответствуем стандартам гост качества</h2>
-        <p>Компания аккредитована как производитель и&nbsp;поставщик оборудования для ведущих компаний РФ и СНГ</p>
-        <div class="accreditbl__logos">
-          <div class="accreditbl__logos-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/partner-gazprom-logo.png" alt="Partner Gasprom logo">
-          </div>
-          <div class="accreditbl__logos-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/partner-rosatom-logo.png" alt="Partner Rosatom logo">
-          </div>
-          <div class="accreditbl__logos-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/partner-transneft-logo.png" alt="Partner Transneft logo">
-          </div>
-          <div class="accreditbl__logos-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/partner-rosneft-logo.png" alt="Partner Rosneft logo">
-          </div>
-          <div class="accreditbl__logos-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partners/partner-alrosa-logo.png" alt="Partner Alrosa logo">
-          </div>
-        </div>
-        <div class="accreditbl__cards">
-          <div class="accreditbl__card">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/noname.svg" alt="">
-            <p>Мы получили лицензию <br> (№ СЕ-12-101-3915) на производство оборудования для ядерных объектов</p>
-          </div>
-          <div class="accreditbl__card">
-            <p>Эта лицензия позволяет работать с&nbsp;ядерными материалами, радиоактивными веществами, а также со
-              стационарными объектами, не относящимися к ядерным установкам.</p>
-          </div>
-        </div>
-        <p>(!) Более подробная информация могут быть предоставлены по вашему запросу</p>
-      </div>
-    </div>
-  </div>
-</section>
+<?php get_template_part('template-parts/accreditbl'); ?>
 
 <section class="upobl">
   <div class="container">

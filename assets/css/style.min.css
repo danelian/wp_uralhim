@@ -2669,10 +2669,10 @@ input[type=number]::-webkit-inner-spin-button {
     line-height: 1.8;
   }
 }
-.page-template-about .dsection2 .section-title {
+.page-template-page-about-us .dsection2 .section-title {
   font-size: 35px;
 }
-.page-template-about .accreditbl .default__container-right > p:last-child {
+.page-template-page-about-us .accreditbl .default__container-right > p:last-child {
   margin-top: 52px;
   margin-bottom: 0;
   max-width: 350px;
@@ -2692,7 +2692,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 @media screen and (max-width: 1024px) {
-  .page-template-about .dsection2 .section-title {
+  .page-template-page-about-us .dsection2 .section-title {
     font-size: 28px;
   }
   .single-services .dsection4 {
@@ -2714,13 +2714,13 @@ input[type=number]::-webkit-inner-spin-button {
   }
 }
 @media screen and (max-width: 765px) {
-  .page-template-about .dsection2 .section-title {
+  .page-template-page-about-us .dsection2 .section-title {
     font-size: 24px;
   }
-  .page-template-about .dsection2 .section-title span {
+  .page-template-page-about-us .dsection2 .section-title span {
     display: none;
   }
-  .page-template-about .accreditbl .default__container-right > p:last-child {
+  .page-template-page-about-us .accreditbl .default__container-right > p:last-child {
     margin-top: 40px;
   }
 }
