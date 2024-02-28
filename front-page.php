@@ -194,15 +194,7 @@ get_header(); ?>
   </div>
 </section>
 
-<?php if (get_field('frontpage_upobl')) { ?>
-<section class="upobl">
-  <div class="container">
-    <div class="upobl__content">
-      <h2><?php the_field('frontpage_upobl'); ?></h2>
-    </div>
-  </div>
-</section>
-<?php } ?>
+<?php get_template_part('template-parts/upobl'); ?>
 
 <?php get_template_part('template-parts/accreditbl'); ?>
 

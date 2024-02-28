@@ -165,15 +165,7 @@ get_header(); ?>
   </div>
 </section>
 
-<section class="upobl">
-  <div class="container">
-    <div class="upobl__content">
-      <h2>мы выпускаем не только типовые модели, но и разрабатываем <span>уникальные комплектации</span> по
-        индивидуальному заказу. В нашем распоряжении высококвалифицированные специалисты и собственное
-        проектно-конструкторское бюро, которые сумеют реализовать самый сложный проект.</h2>
-    </div>
-  </div>
-</section>
+<?php get_template_part('template-parts/upobl'); ?>
 
 <section class="ctabl" id="cta">
   <div class="container">

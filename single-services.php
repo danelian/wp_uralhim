@@ -94,15 +94,7 @@
   </div>
 </section>
 
-<section class="upobl">
-  <div class="container">
-    <div class="upobl__content">
-      <h2>Наше производство обладает всеми требуемыми <span>лицензиями, разрешениями & сертификатами,</span> обеспечивая
-        высокий стандарт качества, быстрое выполнение заказов и предоставление наиболее привлекательных условий для
-        сотрудничества</h2>
-    </div>
-  </div>
-</section>
+<?php get_template_part('template-parts/upobl'); ?>
 
 <section class="gallerybl">
   <div class="container">

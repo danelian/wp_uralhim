@@ -78,14 +78,7 @@ get_header(); ?>
   </div>
 </section>
 
-<section class="upobl">
-  <div class="container">
-    <div class="upobl__content">
-      <h2>ООО «УРАЛХИМАППАРАТ» — <span>качественная</span> продукция, <span>оперативные</span> сроки изготовления и
-        самые доступные цены!</h2>
-    </div>
-  </div>
-</section>
+<?php get_template_part('template-parts/upobl'); ?>
 
 <section class="ctabl" id="cta">
   <div class="container">
