@@ -217,15 +217,15 @@ get_header(); ?>
   </div>
 </section>
 
+<?php if (get_field('frontpage_upobl')) { ?>
 <section class="upobl">
   <div class="container">
     <div class="upobl__content">
-      <h2>Наше производство обладает всеми требуемыми <span>лицензиями, разрешениями & сертификатами,</span> обеспечивая
-        высокий стандарт качества, быстрое выполнение заказов и предоставление наиболее привлекательных условий для
-        сотрудничества</h2>
+      <h2><?php the_field('frontpage_upobl'); ?></h2>
     </div>
   </div>
 </section>
+<?php } ?>
 
 <section class="accreditbl">
   <div class="container">
