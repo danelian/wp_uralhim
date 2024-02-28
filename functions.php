@@ -51,9 +51,11 @@ function danelian_scripts()
   // Swiper
   wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array('jquery'), null, true);
   // Fancybox
-  wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/js/fancybox.min.js', array('jquery'), null, true);
+  wp_enqueue_script('fancybox', get_template_directory_uri() . '/assets/js/fancybox.min.js', array('jquery'), null, true);
   // App js
-  wp_enqueue_script('app', get_template_directory_uri() . '/assets/js/app.min.js', array('jquery', 'swiper'), null, true);
+  wp_enqueue_script('app', get_template_directory_uri() . '/assets/js/app.min.js', array('jquery', 'swiper', 'fancybox'), null, true);
+  // Custom map
+  wp_enqueue_script('custom-map', get_template_directory_uri() . '/assets/js/icon_customImage.min.js', array('jquery', 'swiper', 'app'), null, true);
 }
 add_action('wp_enqueue_scripts', 'danelian_scripts');
 
@@ -75,7 +77,8 @@ function delete_intermediate_image_sizes($sizes)
 /**
  * Регистрирация областей меню
  */
-function danelian_menus() {
+function danelian_menus()
+{
   $locations = array(
     'header' => 'Header Menu',
     'footer' => 'Footer Menu',
@@ -83,3 +86,19 @@ function danelian_menus() {
   register_nav_menus($locations);
 }
 add_action('init', 'danelian_menus');
+
+
+/**
+ * СОЗДАНИЕ OPTIONS PAGE
+ */
+if (function_exists('acf_add_options_page')) {
+  acf_add_options_page(
+    array(
+      'page_title' => 'Theme settings',
+      'menu_title' => 'Theme settings',
+      'menu_slug' => 'theme-general-settings',
+      'capability' => 'edit_posts',
+      'redirect' => false
+    )
+  );
+}
