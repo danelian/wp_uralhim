@@ -67,67 +67,7 @@ get_header(); ?>
   </div>
 </section>
 
-<section class="dsection1">
-  <div class="container">
-    <div class="default__container">
-      <div class="default__container-left">
-        <h2 class="default-title">04 – наши проекты</h2>
-      </div>
-      <div class="default__container-right">
-        <div class="accordion">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <h3 class="section-title">проект 1</h3>
-            </div>
-            <div class="accordion-content">
-              <p>Разработка индивидуальных проектов оборудования, учитывающих специфические требования и условия
-                заказчика, с применением инновационных технологий и передовых инженерных решений.</p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <h3 class="section-title">проект 2</h3>
-            </div>
-            <div class="accordion-content">
-              <p>Разработка индивидуальных проектов оборудования, учитывающих специфические требования и условия
-                заказчика, с применением инновационных технологий и передовых инженерных решений.</p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <h3 class="section-title">проект 3</h3>
-            </div>
-            <div class="accordion-content">
-              <p>Разработка индивидуальных проектов оборудования, учитывающих специфические требования и условия
-                заказчика, с применением инновационных технологий и передовых инженерных решений.</p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <h3 class="section-title">проект 4</h3>
-            </div>
-            <div class="accordion-content">
-              <p>Разработка индивидуальных проектов оборудования, учитывающих специфические требования и условия
-                заказчика, с применением инновационных технологий и передовых инженерных решений.</p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <h3 class="section-title">проект 5</h3>
-            </div>
-            <div class="accordion-content">
-              <p>Разработка индивидуальных проектов оборудования, учитывающих специфические требования и условия
-                заказчика, с применением инновационных технологий и передовых инженерных решений.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row-buttons">
-          <a href="#cta" class="button-primary">Обсудить проект</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<?php get_template_part('template-parts/dsection1'); ?>
 
 <?php get_template_part('template-parts/ctabl'); ?>
 

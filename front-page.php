@@ -155,44 +155,7 @@ get_header(); ?>
   </div>
 </section>
 
-<section class="dsection1">
-  <div class="container">
-    <div class="default__container">
-      <div class="default__container-left">
-        <h2 class="default-title"><?php the_field('frontpage_servicesbl_section'); ?></h2>
-      </div>
-      <div class="default__container-right">
-        <?php if (have_rows('frontpage_services')) : ?>
-          <div class="accordion">
-            <?php while (have_rows('frontpage_services')) : the_row(); ?>
-            <div class="accordion-item">
-              <div class="accordion-header">
-                <?php if (get_sub_field('frontpage_services_title')) { ?><h3 class="section-title"><?php the_sub_field('frontpage_services_title'); ?></h3><?php } ?>
-              </div>
-              <div class="accordion-content">
-                <?php if (get_sub_field('frontpage_services_text')) { the_sub_field('frontpage_services_text'); } ?>
-              </div>
-            </div>
-            <?php endwhile; ?>
-          </div>
-        <?php else : endif; ?>
-        <div class="row-buttons">
-        <?php 
-          $frontpage_servicesbl_btn1 = get_field('frontpage_servicesbl_btn1');
-          if( $frontpage_servicesbl_btn1 ): 
-              $frontpage_servicesbl_btn1_url = $frontpage_servicesbl_btn1['url'];
-              $frontpage_servicesbl_btn1_title = $frontpage_servicesbl_btn1['title'];
-              $frontpage_servicesbl_btn1_target = $frontpage_servicesbl_btn1['target'] ? $frontpage_servicesbl_btn1['target'] : '_self';
-              ?>
-              <a href="<?php echo esc_url( $frontpage_servicesbl_btn1_url ); ?>" target="<?php echo esc_attr( $frontpage_servicesbl_btn1_target ); ?>" class="button-primary">
-                <?php echo esc_html( $frontpage_servicesbl_btn1_title ); ?>
-              </a>
-        <?php endif; ?>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<?php get_template_part('template-parts/dsection1'); ?>
 
 <?php get_template_part('template-parts/upobl'); ?>
 
