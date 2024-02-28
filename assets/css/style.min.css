@@ -120,7 +120,11 @@ body {
   margin: 0 !important;
   width: 100%;
 }
-
+.hidden,
+.wpcf7-response-output,
+.wpcf7-spinner {
+	display: none !important;
+}
 section {
   margin-bottom: 120px;
 }
@@ -443,7 +447,8 @@ th {
   background: none;
 }
 
-.row-buttons {
+.row-buttons,
+.row-buttons>p {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -464,7 +469,7 @@ th {
 .row-buttons .button-second-dark:not(:last-child) {
   margin-right: 20px;
 }
-.row-buttons p {
+.row-buttons>p {
   width: auto !important;
 }
 
@@ -1224,7 +1229,22 @@ th {
 .form-input:focus::placeholder {
   opacity: 0;
 }
-
+.form-input.wpcf7-not-valid {
+  color: var(--red-color) !important;
+  border-color: var(--red-color) !important;
+  background-color: rgba(255, 248, 248, 1);
+}
+.form-input.wpcf7-not-valid::placeholder {
+  color: var(--red-color) !important;
+}
+.wpcf7-not-valid-tip {
+  font-size: 14px;
+  color: var(--red-color);
+  margin: 16px 0 0 0;
+}
+.wpcf7-list-item {
+  margin: 0;
+}
 .wpcf7-list-item label {
   display: block;
   margin: 0;
