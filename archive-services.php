@@ -4,25 +4,7 @@ Template Name: Archive Services
 */
 get_header(); ?>
 
-<section class="dsection2">
-  <div class="container">
-    <div class="dsection2__container">
-      <div class="dsection2__container-left">
-        <h2 class="default-title">01 – Наши услуги</h2>
-        <h1 class="section-title">мы решим любой ваш запрос!</h1>
-        <p>УралХимАппарат предлагает полное сопровождение вашего проекта от идеи до запуска! Мы не только осуществляет
-          изготовление и поставку промышленного оборудования, но и предлагаем ряд услуг по работ с металлом.</p>
-        <div class="row-buttons">
-          <a href="#cta" class="button-primary">Задать вопрос</a>
-          <a href="#steps" class="button-second">Этапы работ</a>
-        </div>
-      </div>
-      <div class="dsection2__container-right">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/services-image.jpg" alt="">
-      </div>
-    </div>
-  </div>
-</section>
+<?php get_template_part('template-parts/dsection2'); ?>
 
 <section class="dsection3">
   <div class="container">
