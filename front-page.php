@@ -8,19 +8,44 @@ get_header(); ?>
   <div class="container">
     <div class="hero__content">
       <span class="hero__subtitle">уралхимаппарат</span>
-      <h1 class="hero__title">производство металлоконструкций</h1>
-      <h1 class="hero__title-mobile">производство металло- конструкций</h1>
-      <div class="hero__text">
-        <p>Изготовление оборудования и металлоконструкций любой сложности для предприятий нефтехимии, металлургии,
-          атомной энергетики и других отраслей.</p>
-      </div>
+      <?php if (get_field('hero_title')) { ?><h1 class="hero__title"><?php the_field('hero_title'); ?></h1><?php } ?>
+      <?php if (get_field('hero_title_mob')) { ?><h1 class="hero__title-mobile"><?php the_field('hero_title_mob'); ?></h1><?php } ?>
+      <?php if (get_field('hero_text')) { ?>
+        <div class="hero__text">
+          <?php the_field('hero_text'); ?>
+        </div>
+      <?php } ?>
       <div class="row-buttons">
-        <a href="catalog.html" class="button-primary">Каталог</a>
-        <a href="#cta" class="button-second">Связаться с нами</a>
+        <?php 
+          $hero_btn1 = get_field('hero_btn1');
+          if( $hero_btn1 ): 
+              $hero_btn1_url = $hero_btn1['url'];
+              $hero_btn1_title = $hero_btn1['title'];
+              $hero_btn1_target = $hero_btn1['target'] ? $hero_btn1['target'] : '_self';
+              ?>
+              <a href="<?php echo esc_url( $hero_btn1_url ); ?>" target="<?php echo esc_attr( $hero_btn1_target ); ?>" class="button-primary">
+                <?php echo esc_html( $hero_btn1_title ); ?>
+              </a>
+        <?php endif; ?>
+        <?php 
+          $hero_btn2 = get_field('hero_btn2');
+          if( $hero_btn2 ): 
+              $hero_btn2_url = $hero_btn2['url'];
+              $hero_btn2_title = $hero_btn2['title'];
+              $hero_btn2_target = $hero_btn2['target'] ? $hero_btn2['target'] : '_self';
+              ?>
+              <a href="<?php echo esc_url( $hero_btn2_url ); ?>" target="<?php echo esc_attr( $hero_btn2_target ); ?>" class="button-second">
+                <?php echo esc_html( $hero_btn2_title ); ?>
+              </a>
+        <?php endif; ?>
       </div>
     </div>
   </div>
-  <div class="hero__image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/hero-image.jpg');"></div>
+  <div class="hero__image" 
+  style="background-image: url(
+    <?php if (get_field('hero_image')) { the_field('hero_image'); } 
+    else { echo get_template_directory_uri(); ?>/assets/img/hero-image.jpg <?php } ?>);">
+  </div>
 </section>
 
 <section class="benefits">
