@@ -48,28 +48,20 @@ get_header(); ?>
   </div>
 </section>
 
+<?php if (have_rows('benefits')) : ?>
 <section class="benefits">
   <div class="container">
     <div class="benefits__cards">
+      <?php while (have_rows('benefits')) : the_row(); ?>
       <div class="benefit">
-        <div class="benefit__value">>15</div>
-        <div class="benefit__text">лет работы на рынке металлоконструкций</div>
+        <div class="benefit__value"><?php the_sub_field('benefit_value'); ?></div>
+        <div class="benefit__text"><?php the_sub_field('benefit_text'); ?></div>
       </div>
-      <div class="benefit">
-        <div class="benefit__value">100%</div>
-        <div class="benefit__text">качество выпускаемой продукции</div>
-      </div>
-      <div class="benefit">
-        <div class="benefit__value">600+</div>
-        <div class="benefit__text">успешно реализованных проектов</div>
-      </div>
-      <div class="benefit">
-        <div class="benefit__value">200+</div>
-        <div class="benefit__text">высоко квалифицированных мастеров</div>
-      </div>
+      <?php endwhile; ?>
     </div>
   </div>
 </section>
+<?php else : endif; ?>
 
 <section class="dsection3">
   <div class="container">
