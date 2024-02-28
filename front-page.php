@@ -198,87 +198,8 @@ get_header(); ?>
 
 <?php get_template_part('template-parts/accreditbl'); ?>
 
-<section class="ctabl" id="cta">
-  <div class="container">
-    <div class="default__container">
-      <div class="default__container-left">
-        <h2 class="default-title">05 – связь</h2>
-      </div>
-      <div class="default__container-right">
-        <div class="ctabl__form">
-          <h2 class="section-title">заполните форму обратной связи</h2>
-          <p>Заполните форму справа и мы свяжемся с вами для личной консультации – вместе обсудим детали, наметим план
-            действий и рассчитаем стоимость работ!</p>
+<?php get_template_part('template-parts/ctabl'); ?>
 
-          <div class="wpcf7 js" id="wpcf7-f113-o1" lang="en-US" dir="ltr">
-            <form action="/contacts/#wpcf7-f113-o1" method="post" class="wpcf7-form init">
-              <div style="display: none;">
-                <input type="hidden" name="_wpcf7" value="113">
-              </div>
-              <div class="form-group">
-                <div class="form-label">Имя и Фамилия</div>
-                <p><span class="wpcf7-form-control-wrap">
-                    <input size="40" class="wpcf7-form-control wpcf7-text form-input" placeholder="Арсений Парфенов"
-                      type="text">
-                  </span></p>
-              </div>
-              <div class="form-group">
-                <div class="form-label">Ваш имейл</div>
-                <p><span class="wpcf7-form-control-wrap">
-                    <input size="40" class="wpcf7-form-control wpcf7-text form-input"
-                      placeholder="mail@uralchemapparatus.ru" type="email">
-                  </span></p>
-              </div>
-              <div class="form-group">
-                <div class="form-label">Номер вашего телефона</div>
-                <p><span class="wpcf7-form-control-wrap">
-                    <input size="40" class="wpcf7-form-control wpcf7-text form-input" placeholder="+7 922 195 15 44"
-                      type="number">
-                  </span></p>
-              </div>
-              <div class="form-group">
-                <div class="form-checkbox">
-                  <p><span class="wpcf7-form-control-wrap">
-                      <span class="wpcf7-form-control wpcf7-acceptance">
-                        <span class="wpcf7-list-item">
-                          <label>
-                            <input type="checkbox" value="1">
-                            <span class="wpcf7-list-item-label">Я согласен(а) на обработку моих <a href="#"
-                                target="_blank">персональных данных.</a></span>
-                          </label>
-                        </span>
-                      </span>
-                    </span>
-                  </p>
-                </div>
-              </div>
-              <div class="row-buttons">
-                <p>
-                  <input class="wpcf7-form-control wpcf7-submit has-spinner button-primary" type="submit"
-                    value="Отправить">
-                  <span class="wpcf7-spinner"></span>
-                </p>
-                <a href="tel:+" class="button-second">Позвонить нам</a>
-              </div>
-              <div class="wpcf7-response-output" aria-hidden="true"></div>
-            </form>
-          </div>
-
-          <div class="ctabl__socials">
-            <h3>Или свяжитесь с нами самостоятельно прямо сейчас!</h3>
-            <?php get_template_part('template-parts/socials'); ?>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contactsbl" id="contacts">
-  <div class="container">
-    <h2 class="default-title">06 – контакты</h2>
-    <?php get_template_part('template-parts/contactsbl'); ?>
-  </div>
-</section>
+<?php get_template_part('template-parts/contactsbl'); ?>
 
 <?php get_footer(); ?>
