@@ -105,42 +105,18 @@ get_header(); ?>
 <section class="dsection6">
   <div class="container">
     <div class="dsection6__heading">
-      <h2 class="section-title">Категории теплообменных аппаратов</h2>
+      <?php if (get_field('dsection6_title')) { ?><h2 class="section-title"><?php the_field('dsection6_title'); ?></h2><?php } ?>
     </div>
-    <div class="dsection6__cards">
-      <div class="infocard dark">
-        <h3>Назначение</h3>
-        <ul>
-          <li>Теплообменники</li>
-          <li>Холодильники</li>
-          <li>Конденсаторы</li>
-          <li>Испарители</li>
-        </ul>
+    <?php if (have_rows('dsection6_cards')) : ?>
+      <div class="dsection6__cards">
+        <?php while (have_rows('dsection6_cards')) : the_row(); ?>
+          <div class="infocard">
+            <?php if (get_sub_field('dsection6_card_title')) { ?><h3><?php the_sub_field('dsection6_card_title'); ?></h3><?php } ?>
+            <?php if (get_sub_field('dsection6_card_content')) { the_sub_field('dsection6_card_content'); } ?>
+          </div>
+        <?php endwhile; ?>
       </div>
-      <div class="infocard">
-        <h3>Тип конструкции</h3>
-        <ul>
-          <li>Аппараты с неподвижными трубными решетками</li>
-          <li>С температурным компенсатором на кожухе</li>
-        </ul>
-      </div>
-      <div class="infocard">
-        <h3>Расположение</h3>
-        <ul>
-          <li>Горизонтальные</li>
-          <li>Вертикальные</li>
-        </ul>
-      </div>
-      <div class="infocard">
-        <h3>Теплоноситель</h3>
-        <ul>
-          <li>Газообразный</li>
-          <li>Парогазовый</li>
-          <li>Жидкий / парожидкостный</li>
-          <li>Паровой</li>
-        </ul>
-      </div>
-    </div>
+    <?php else : endif; ?>
   </div>
 </section>
 
