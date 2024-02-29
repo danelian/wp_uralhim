@@ -25,7 +25,7 @@ if (!function_exists('danelian_setup')) {
       )
     );
     // Добавление миниатюр для постов
-    add_theme_support('post-thumbnails', array('post', 'services'));
+    add_theme_support('post-thumbnails', array('post', 'services', 'production'));
   }
   add_action('after_setup_theme', 'danelian_setup');
 }
