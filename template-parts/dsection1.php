@@ -1,4 +1,4 @@
-<section class="dsection1">
+<section class="dsection1" id="worksteps">
   <div class="container">
     <div class="default__container">
       <div class="default__container-left">

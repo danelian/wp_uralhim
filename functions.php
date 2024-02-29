@@ -25,7 +25,7 @@ if (!function_exists('danelian_setup')) {
       )
     );
     // Добавление миниатюр для постов
-    add_theme_support('post-thumbnails', array('post'));
+    add_theme_support('post-thumbnails', array('post', 'services'));
   }
   add_action('after_setup_theme', 'danelian_setup');
 }
@@ -71,11 +71,11 @@ function delete_intermediate_image_sizes($sizes)
 {
   // размеры которые нужно удалить
   return array_diff($sizes, [
+    'thumbnail',
     '1536x1536',
     '2048x2048',
   ]);
 }
-
 
 /**
  * Регистрирация областей меню
@@ -89,6 +89,49 @@ function danelian_menus()
   register_nav_menus($locations);
 }
 add_action('init', 'danelian_menus');
+
+
+add_action('init', 'register_post_types');
+function register_post_types() {
+	register_post_type('services', 
+		array(
+			'labels' => array(
+				'name'               => __('Услуги'),
+				'singular_name'      =>  __('Услуги'),
+				'add_new'            => __('Добавить Услугу'),
+				'add_new_item'       => __('Добавление Услуги'),
+				'edit'				=>  __('Редактировать Услугу'),
+				'edit_item'          => __('Редактирование Услуги'),
+				'new_item'           => __('Новая Услуга'),
+				'view'          		 => __('Просмотреть Услугу'),
+				'view_item'          => __('Просмотреть Услугу'),
+				'search_items'       => __('Поиск по Услугам'),
+				'not_found'          => __('Пока нет Услуг'),
+				'not_found_in_trash' => __('В корзине нет Услуг'),
+				'menu_name'          => __('Услуги'),
+			),
+			'description'         => 'Услуги itip',
+			'public'              => true,
+			// 'publicly_queryable'  => true,
+			// 'exclude_from_search' => false,
+			// 'show_ui'             => true,
+			'show_in_menu'        => null,
+			// 'show_in_nav_menus'   => true,
+      'show_in_rest'        => true,
+			'menu_position'       => 40,
+			'menu_icon'           => 'dashicons-cart', 
+			'capability_type'   	=> 'post',
+			'map_meta_cap'      	=> true,
+			'hierarchical'        => false,
+			'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
+			'taxonomies'          => [''],
+			'has_archive'         => false,
+			'rewrite'             => true,
+			'query_var'           => true,
+			'can_export'          => true
+		)
+	);
+}
 
 
 /**
