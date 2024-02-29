@@ -25,49 +25,41 @@
   <div class="container">
     <div class="dsection5__container">
       <div class="dsection5__left">
-        <h1 class="section-title">Плазменная резка металла</h1>
-        <p>Плазменная резка листового металла представляет собой технологический процесс, в ходе которого сжатая
-          плазменная дуга в виде струи, обрабатывает металл посредством высокой температуры.</p>
+        <h1 class="section-title"><?php the_title(); ?></h1>
+        <?php the_excerpt(); ?>
       </div>
       <div class="dsection5__right">
         <div class="dsection5__infocard">
-          <h3>Выбор способа для плазменной резки металла зависит от толщины материала</h3>
+          <?php if (get_field('dsection5_infocard_title')) { ?><h3><?php the_field('dsection5_infocard_title'); ?></h3><?php } ?>
+          <?php if (get_field('dsection5_infocard_text')) { ?><?php the_field('dsection5_infocard_text'); ?><?php } ?>
+          <?php if (have_rows('dsection5_infocard_values')) : ?>
           <div class="value-items">
-            <div class="value-item">
-              <span>1-10 мм.</span>
-              выполняется в азоте
-            </div>
-            <div class="value-item">
-              <span>20-100 мм.</span>
-              азот с присутствием водорода
-            </div>
-            <div class="value-item">
-              <span>100+ мм.</span>
-              выполняется в аргонно-водородных смесях
-            </div>
+            <?php while (have_rows('dsection5_infocard_values')) : the_row(); ?>
+              <div class="value-item">
+                <?php if (get_sub_field('value')) { ?><span><?php the_sub_field('value'); ?></span><?php } ?>
+                <?php if (get_sub_field('text')) { the_sub_field('text'); } ?>
+              </div>
+            <?php endwhile; ?>
           </div>
+          <?php else : endif; ?>
         </div>
       </div>
     </div>
-    <div class="dsection5__infocards">
-      <div class="infocard">
-        <h3>Стандарты Контроля Качества</h3>
-        <p>Применяем строгие меры контроля качества на каждом этапе производства</p>
+    <?php if (have_rows('dsection5_infocards')) : ?>
+      <div class="dsection5__infocards">
+        <?php while (have_rows('dsection5_infocards')) : the_row(); ?>
+          <div class="infocard">
+            <?php if (get_sub_field('dsection5_infocard_title')) { ?><h3><?php the_sub_field('dsection5_infocard_title'); ?></h3><?php } ?>
+            <?php if (get_sub_field('dsection5_infocard_text')) { ?><p><?php the_sub_field('dsection5_infocard_text'); ?></p><?php } ?>
+          </div>
+        <?php endwhile; ?>
       </div>
-      <div class="infocard">
-        <h3>Документация & Сертификация</h3>
-        <p>Предоставляем полный комплект документов, включая сертификаты качества и отчёты о проведённых испытаниях</p>
+    <?php else : endif; ?>
+    <?php if (get_field('dsection5_article')) { ?>
+      <div class="dsection5__article">
+        <?php the_field('dsection5_article'); ?>
       </div>
-      <div class="infocard">
-        <h3>Гибкие Опции Доставки</h3>
-        <p>Предлагаем различные варианты транспортировки, включая автомобильные и железнодорожные перевозки</p>
-      </div>
-      <div class="infocard">
-        <h3>Гарантийное Обслуживание & Поддержка</h3>
-        <p>Гарантируем выполнение всех обязательств в рамках законодательства, предлагая полный спектр сервисных и
-          гарантийных услуг</p>
-      </div>
-    </div>
+    <?php } ?>
   </div>
 </section>
 
