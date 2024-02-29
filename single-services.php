@@ -2,45 +2,22 @@
 
 <section class="dsection4">
   <div class="container">
-    <h2 class="default-title">01 – Hаши услуги</h2>
-    <div class="dsection4__cards">
-      <a href="single-services.html" class="scard">
-        <div class="scard-img">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/plazmennaya-rezka-metalla.jpg" alt="">
-        </div>
-        <h3 class="scard-title">Плазменная резка металла</h3>
-      </a>
-      <a href="single-services.html" class="scard">
-        <div class="scard-img">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/plazmennaya-rezka-metalla.jpg" alt="">
-        </div>
-        <h3 class="scard-title">Плазменная резка металла</h3>
-      </a>
-      <a href="single-services.html" class="scard">
-        <div class="scard-img">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/plazmennaya-rezka-metalla.jpg" alt="">
-        </div>
-        <h3 class="scard-title">Плазменная резка металла</h3>
-      </a>
-      <a href="single-services.html" class="scard">
-        <div class="scard-img">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/plazmennaya-rezka-metalla.jpg" alt="">
-        </div>
-        <h3 class="scard-title">Плазменная резка металла</h3>
-      </a>
-      <a href="single-services.html" class="scard">
-        <div class="scard-img">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/plazmennaya-rezka-metalla.jpg" alt="">
-        </div>
-        <h3 class="scard-title">Плазменная резка металла</h3>
-      </a>
-      <a href="single-services.html" class="scard">
-        <div class="scard-img">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/plazmennaya-rezka-metalla.jpg" alt="">
-        </div>
-        <h3 class="scard-title">Плазменная резка металла</h3>
-      </a>
-    </div>
+    <?php if (get_field('dsection4_section_service', 'options')) { ?><h2 class="default-title"><?php the_field('dsection4_section_service', 'options'); ?></h2><?php } ?>
+    <?php
+    $query = new WP_Query( array(
+      'post_type' => 'services',
+      'posts_per_page' => -1,
+      'order' => 'ASC',
+    ));
+    ?>
+    <?php if ( $query->have_posts() ) : ?>
+      <div class="dsection4__cards">
+        <?php while ( $query->have_posts() ) : $query->the_post();
+          get_template_part('template-parts/scard');
+        endwhile; ?>
+      </div>
+    <?php wp_reset_postdata(); ?>
+    <?php else : endif; ?>
   </div>
 </section>
 
@@ -94,10 +71,37 @@
   </div>
 </section>
 
-<?php get_template_part('template-parts/upobl'); ?>
+<?php if (get_field('upobl_text_service', 'options')) { ?>
+  <section class="upobl">
+    <div class="container">
+      <div class="upobl__content">
+        <h2><?php the_field('upobl_text_service', 'options'); ?></h2>
+      </div>
+    </div>
+  </section>
+<?php } ?>
 
 <?php get_template_part('template-parts/gallerybl'); ?>
 
-<?php get_template_part('template-parts/ctabl'); ?>
+<section class="ctabl" id="cta">
+  <div class="container">
+    <div class="default__container">
+      <div class="default__container-left">
+        <?php if (get_field('ctabl_section', 'options')) { ?><h2 class="default-title"><?php the_field('ctabl_section', 'options'); ?></h2><?php } ?>
+      </div>
+      <div class="default__container-right">
+        <div class="ctabl__form">
+          <?php if (get_field('ctabl_title', 'options')) { ?><h2 class="section-title"><?php the_field('ctabl_title', 'options'); ?></h2><?php } ?>
+          <?php if (get_field('ctabl_text', 'options')) { ?><p><?php the_field('ctabl_text', 'options'); ?></p><?php } ?>
+          <?php echo do_shortcode('[contact-form-7 id="cfa5555" title="Контактная форма"]'); ?>
+          <div class="ctabl__socials">
+            <h3>Или свяжитесь с нами самостоятельно прямо сейчас!</h3>
+            <?php get_template_part('template-parts/socials'); ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <?php get_footer(); ?>

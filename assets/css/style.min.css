@@ -2664,6 +2664,9 @@ input[type=number]::-webkit-inner-spin-button {
   justify-content: center;
   width: 100%;
 }
+.gallerybl__items a img {
+  border-radius: 8px;
+}
 
 @media screen and (max-width: 576px) {
   .gallerybl__items {
@@ -2762,4 +2765,9 @@ input[type=number]::-webkit-inner-spin-button {
   .single-uslugi .dsection4 {
     margin-bottom: 56px;
   }
+}
+
+.postid-165 .dsection4__cards .scard:nth-child(1) .scard-img img {
+  filter: saturate(100%);
+  -webkit-filter: saturate(100%);
 }
