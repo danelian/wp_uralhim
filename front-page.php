@@ -67,50 +67,39 @@ get_header(); ?>
   <div class="container">
     <div class="default__container">
       <div class="default__container-left">
-        <h2 class="default-title">01 – Каталог продукции</h2>
+        <?php if (get_field('dsection3_section')) { ?><h2 class="default-title"><?php the_field('dsection3_section'); ?></h2><?php } ?>
       </div>
       <div class="default__container-right">
-        <div class="dsection3__cards">
-          <a href="single-product.html" class="pcard">
-            <div class="pcard-img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/pcard-image.png" alt="">
-            </div>
-            <h3 class="pcard-title">оборудование для АЭС</h3>
-          </a>
-          <a href="single-product.html" class="pcard">
-            <div class="pcard-img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/pcard-image.png" alt="">
-            </div>
-            <h3 class="pcard-title">оборудование для АЭС</h3>
-          </a>
-          <a href="single-product.html" class="pcard">
-            <div class="pcard-img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/pcard-image.png" alt="">
-            </div>
-            <h3 class="pcard-title">оборудование для АЭС</h3>
-          </a>
-          <a href="single-product.html" class="pcard">
-            <div class="pcard-img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/pcard-image.png" alt="">
-            </div>
-            <h3 class="pcard-title">оборудование для АЭС</h3>
-          </a>
-          <a href="single-product.html" class="pcard">
-            <div class="pcard-img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/pcard-image.png" alt="">
-            </div>
-            <h3 class="pcard-title">оборудование для АЭС</h3>
-          </a>
-          <a href="single-product.html" class="pcard">
-            <div class="pcard-img">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/pcard-image.png" alt="">
-            </div>
-            <h3 class="pcard-title">оборудование для АЭС</h3>
-          </a>
-        </div>
+        <?php if (have_rows('dsection3_categories')) : ?>
+          <div class="dsection3__cards">
+            <?php while (have_rows('dsection3_categories')) : the_row(); ?>
+              <?php get_template_part('template-parts/pcat_card'); ?>
+            <?php endwhile; ?>
+          </div>
+        <?php else : endif; ?>
         <div class="row-buttons">
-          <a href="archive-products.html" class="button-primary">Полный каталог продукции</a>
-          <a href="services.html" class="button-second">Наши услуги</a>
+          <?php 
+            $dsection3_btn1 = get_field('dsection3_btn1');
+            if( $dsection3_btn1 ): 
+                $dsection3_btn1_url = $dsection3_btn1['url'];
+                $dsection3_btn1_title = $dsection3_btn1['title'];
+                $dsection3_btn1_target = $dsection3_btn1['target'] ? $dsection3_btn1['target'] : '_self';
+                ?>
+                <a href="<?php echo esc_url( $dsection3_btn1_url ); ?>" target="<?php echo esc_attr( $dsection3_btn1_target ); ?>" class="button-primary">
+                  <?php echo esc_html( $dsection3_btn1_title ); ?>
+                </a>
+          <?php endif; ?>
+          <?php 
+            $dsection3_btn2 = get_field('dsection3_btn2');
+            if( $dsection3_btn2 ): 
+                $dsection3_btn2_url = $dsection3_btn2['url'];
+                $dsection3_btn2_title = $dsection3_btn2['title'];
+                $dsection3_btn2_target = $dsection3_btn2['target'] ? $dsection3_btn2['target'] : '_self';
+                ?>
+                <a href="<?php echo esc_url( $dsection3_btn2_url ); ?>" target="<?php echo esc_attr( $dsection3_btn2_target ); ?>" class="button-second">
+                  <?php echo esc_html( $dsection3_btn2_title ); ?>
+                </a>
+          <?php endif; ?>
         </div>
       </div>
     </div>
