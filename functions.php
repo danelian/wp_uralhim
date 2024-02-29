@@ -131,7 +131,47 @@ function register_post_types() {
 			'can_export'          => true
 		)
 	);
+	register_post_type('production', 
+    array(
+      'labels' => array(
+        'name'               => __('Продукция'),
+        'singular_name'      =>  __('Продукция'),
+        'add_new'            => __('Добавить Продукцию'),
+        'add_new_item'       => __('Добавление Продукции'),
+        'edit'				=>  __('Редактировать Продукцию'),
+        'edit_item'          => __('Редактирование Продукции'),
+        'new_item'           => __('Новая Продукция'),
+        'view'          		 => __('Просмотреть Продукцию'),
+        'view_item'          => __('Просмотреть Продукцию'),
+        'search_items'       => __('Поиск по Продукции'),
+        'not_found'          => __('Пока нет Продукции'),
+        'not_found_in_trash' => __('В корзине нет Продукции'),
+        'menu_name'          => __('Продукция'),
+      ),
+      'description'         => 'Продукция itip',
+			'public'              => true,
+			// 'publicly_queryable'  => true,
+			// 'exclude_from_search' => false,
+			// 'show_ui'             => true,
+			'show_in_menu'        => null,
+			// 'show_in_nav_menus'   => true,
+      'show_in_rest'        => true,
+      'menu_position'       => 50,
+      'menu_icon'           => 'dashicons-cart', 
+			'capability_type'   	=> 'post',
+			'map_meta_cap'      	=> true,
+			'hierarchical'        => false,
+			'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
+			'taxonomies'          => ['category'],
+			// 'has_archive'         => true,
+			'rewrite'             => true,
+			'query_var'           => true,
+			'can_export'          => true
+		)
+	);
 }
+
+
 
 
 /**
