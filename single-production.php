@@ -58,31 +58,28 @@ get_header(); ?>
   <div class="container">
     <div class="dsection8__container">
       <div class="dsection8__col">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/single-products-image.jpg" alt="">
+        <?php if (get_field('dsection8_image')) { ?>
+          <img src="<?php the_field('dsection8_image'); ?>" alt="">
+        <?php } ?>
       </div>
       <div class="dsection8__col">
-        <div class="dsection8__infocards">
-          <div class="infocard dark">
-            <h3>Стандарты Контроля Качества</h3>
-            <p>Применяем строгие меры контроля качества на каждом этапе производства</p>
+        <?php if (have_rows('dsection8_cards')) : ?>
+          <div class="dsection8__infocards">
+            <?php while (have_rows('dsection8_cards')) : the_row(); ?>
+              <div class="infocard">
+                <?php if (get_sub_field('dsection8_card_title')) { ?><h3><?php the_sub_field('dsection8_card_title'); ?></h3><?php } ?>
+                <?php if (get_sub_field('dsection8_card_content')) { ?><p><?php the_sub_field('dsection8_card_content'); ?></p><?php } ?>
+              </div>
+            <?php endwhile; ?>
           </div>
-          <div class="infocard">
-            <h3>Документация & Сертификация</h3>
-            <p>Предоставляем полный комплект документов, включая сертификаты качества и отчёты о проведённых испытаниях
-            </p>
-          </div>
-          <div class="infocard">
-            <h3>Гибкие Опции Доставки</h3>
-            <p>Предлагаем различные варианты транспортировки, включая автомобильные и железнодорожные перевозки</p>
-          </div>
-          <div class="infocard">
-            <h3>Гарантийное Обслуживание & Поддержка</h3>
-            <p>Гарантируем выполнение всех обязательств в рамках законодательства, предлагая полный спектр сервисных и
-              гарантийных услуг</p>
-          </div>
-        </div>
+        <?php else : endif; ?>
       </div>
     </div>
+    <?php if (get_field('dsection5_article')) { ?>
+      <div class="dsection5__article">
+        <?php the_field('dsection5_article'); ?>
+      </div>
+    <?php } ?>
   </div>
 </section>
 
