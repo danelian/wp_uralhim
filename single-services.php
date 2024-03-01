@@ -1,5 +1,21 @@
 <?php get_header(); ?>
 
+<div class="kama_breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+  <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+    <a href="<?php echo get_home_url(); ?>" itemprop="item">
+      <span itemprop="name">Главная</span>
+    </a>
+  </span>
+  <span class="kb_sep"> / </span>
+  <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+    <a href="<?php echo get_home_url(); ?>/services/" itemprop="item">
+      <span itemprop="name">Услуги</span>
+    </a>
+  </span>
+  <span class="kb_sep"> / </span>
+  <span class="kb_title"><?php the_title(); ?></span>
+</div>
+
 <section class="dsection4">
   <div class="container">
     <?php if (get_field('dsection4_section_service', 'options')) { ?><h2 class="default-title"><?php the_field('dsection4_section_service', 'options'); ?></h2><?php } ?>

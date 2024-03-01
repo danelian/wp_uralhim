@@ -4,6 +4,8 @@ Template Name: Archive Services
 */
 get_header(); ?>
 
+<?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs('/'); ?>
+
 <?php get_template_part('template-parts/dsection2'); ?>
 
 <section class="dsection3">

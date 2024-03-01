@@ -4,6 +4,8 @@ Template Name: Продукция
 */
 get_header(); ?>
 
+<?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs('/'); ?>
+
 <section class="dsection3">
   <div class="container">
     <div class="default__container">

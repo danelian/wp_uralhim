@@ -4,6 +4,8 @@ Template Name: About Us
 */
 get_header(); ?>
 
+<?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs('/'); ?>
+
 <?php get_template_part('template-parts/dsection2'); ?>
 
 <?php get_template_part('template-parts/accreditbl'); ?>
