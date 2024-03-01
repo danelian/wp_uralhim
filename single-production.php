@@ -85,8 +85,48 @@ get_header(); ?>
 
 <?php get_template_part('template-parts/upobl'); ?>
 
-<?php get_template_part('template-parts/gallerybl'); ?>
+<section class="gallerybl">
+  <div class="container">
+    <div class="default__container">
+      <div class="default__container-left">
+        <?php if (get_field('gallerybl_section_products', 'options')) { ?><h2 class="default-title"><?php the_field('gallerybl_section_products', 'options'); ?></h2><?php } ?>
+      </div>
+      <div class="default__container-right">
+        <?php
+        $gallerybl_items = get_field('gallerybl_items', 'options');
+        if ($gallerybl_items): ?>
+          <div class="gallerybl__items">
+            <?php foreach ($gallerybl_items as $item): ?>
+              <a data-fancybox="gallery" href="<?php echo $item['url']; ?>">
+                <img src="<?php echo $item['url']; ?>" alt="<?php echo $item['alt']; ?>">
+              </a>
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
+      </div>
+    </div>
+  </div>
+</section>
 
-<?php get_template_part('template-parts/ctabl'); ?>
+<section class="ctabl" id="cta">
+  <div class="container">
+    <div class="default__container">
+      <div class="default__container-left">
+        <?php if (get_field('ctabl_section_category', 'options')) { ?><h2 class="default-title"><?php the_field('ctabl_section_category', 'options'); ?></h2><?php } ?>
+      </div>
+      <div class="default__container-right">
+        <div class="ctabl__form">
+          <?php if (get_field('ctabl_title_category', 'options')) { ?><h2 class="section-title"><?php the_field('ctabl_title_category', 'options'); ?></h2><?php } ?>
+          <?php if (get_field('ctabl_text_category', 'options')) { ?><p><?php the_field('ctabl_text_category', 'options'); ?></p><?php } ?>
+          <?php echo do_shortcode('[contact-form-7 id="cfa5555" title="Контактная форма"]'); ?>
+          <div class="ctabl__socials">
+            <h3>Или свяжитесь с нами самостоятельно прямо сейчас!</h3>
+            <?php get_template_part('template-parts/socials'); ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <?php get_footer(); ?>
