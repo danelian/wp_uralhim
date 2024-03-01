@@ -49,6 +49,20 @@
 </footer>
 
 <?php wp_footer(); ?>
+
+<div class="state state-success" data-state="state-success">
+	<div class="state-box">
+    <div class="modal-heading">
+      <?php if (get_field('title_success', 'options')) { ?><h2><?php the_field('title_success', 'options'); ?></h2><?php } ?>
+      <?php if (get_field('text_success', 'options')) { ?><p><?php the_field('text_success', 'options'); ?></p><?php } ?>
+    </div>
+    <div class="row-buttons">
+      <a href="<?php echo get_home_url(); ?>/production/" class="button-primary">Наша продукция</a>
+      <a href="#" class="button-second close">Закрыть</a>
+    </div>
+	</div>
+</div>
+
 <!-- Yandex Map -->
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=<25e5a4e6-c0a4-47b3-a0d5-0fb96f8bec03>" type="text/javascript"></script>
 
