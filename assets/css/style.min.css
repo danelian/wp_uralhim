@@ -1404,9 +1404,9 @@ input[type=number]::-webkit-inner-spin-button {
   color: var(--black-color);
   transition: color 0.3s ease;
 }
-.pcard:hover .pcard-img {
+/* .pcard:hover .pcard-img {
   background-color: var(--darkBlue-color);
-}
+} */
 .pcard:hover .pcard-title {
   color: var(--global-color);
 }
@@ -2970,4 +2970,65 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .state .state-box .row-buttons {
   margin-top: 36px !important;
+}
+
+
+
+
+@keyframes shake {
+	25% {
+		transform: rotate(calc(var(--angle) * -1));
+	}
+
+	50% {
+		transform: rotate(var(--angle));
+	}
+
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+.pcard-img {
+	--width: 100%;
+	--time: 0.7s;
+
+	position: relative;
+	overflow: hidden;
+}
+
+/* .pcard-img text {
+	position: relative;
+	z-index: 5;
+	
+	transition: color var(--time);
+} */
+
+/* .HOVER:hover text {
+	color: #222;
+} */
+
+.pcard-img span {
+	position: absolute;
+	display: block;
+	content: "";
+	z-index: -1;
+	width: 0;
+	height: 0;
+	
+	border-radius: 100%;
+	background: var(--darkBlue-color);
+	
+	transform: translate(-50%, -50%);
+	transition: width var(--time), padding-top var(--time);
+}
+
+.pcard:hover .pcard-img span {
+	width: calc(var(--width) * 2.25);
+	padding-top: calc(var(--width) * 2.25);
+}
+
+.animated {
+	--angle: 5deg;
+	animation: shake 0.3s;
 }
